@@ -15,11 +15,14 @@ public class PushElement {
             if (i == index) {
                 arr_new[i] = num;
                 arr_new[i + 1] = arr[i];
+                i++;
             } else {
                 arr_new[i] = arr[i];
             }
         }
-
+        System.out.println("Mảng cũ");
+        System.out.println(Arrays.toString(arr));
+        System.out.println("Mảng mới");
         System.out.println(Arrays.toString(arr_new));
     }
 }
