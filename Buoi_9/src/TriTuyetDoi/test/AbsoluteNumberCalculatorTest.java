@@ -1,3 +1,6 @@
+package TriTuyetDoi.test;
+
+import TriTuyetDoi.src.AbsoluteNumberCalculator;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
