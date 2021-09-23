@@ -1,4 +1,4 @@
-package arraylistfake;
+package arraylist;
 
 import java.util.Arrays;
 
