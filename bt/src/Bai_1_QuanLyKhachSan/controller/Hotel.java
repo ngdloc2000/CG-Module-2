@@ -36,6 +36,7 @@ public class Hotel {
         }
     }
 
+    // HIển thị tất cả các hóa đơn đang có
     public void showAllOrder() {
         for (Order order : orderList
         ) {
@@ -43,6 +44,7 @@ public class Hotel {
         }
     }
 
+    // Tính tiền cho 1 khách theo CMND
     public void getPricePerPerson(String cmnd) {
         for (Order ord : orderList
         ) {
@@ -52,6 +54,7 @@ public class Hotel {
         }
     }
 
+    // Tính tổng doanh thu của các phòng đang cho thuê hiện tại
     public long getAllTotalHotel() {
         long total = 0;
         for (Order order : orderList
@@ -61,6 +64,7 @@ public class Hotel {
         return total;
     }
 
+    // tìm khách trọ theo CMND
     public User searchUser(String id) {
         for (User user : userList) {
             if (user.getCode().equals(id)) {
@@ -70,17 +74,16 @@ public class Hotel {
         return null;
     }
 
+    // Thanh toán cho khách
     public void getPayAUser(String id) {
         for (int i = 0; i < orderList.size(); i++) {
             if (orderList.get(i).getUser().getCode().equals(id)) {
                 orderList.get(i).getRoom().setStatus(true);
                 System.out.println("Thanh toán thành công");
                 System.out.println("Số ngày thuê: " + orderList.get(i).getNumberOfRentalDays());
-                System.out.println("Giá phòng: " + orderList.get(i).getTotalPrice());
+                System.out.println("Tiền phải trả: " + orderList.get(i).getTotalPrice());
                 orderList.get(i).getRoom().setSum(orderList.get(i).getTotalPrice() + orderList.get(i).getRoom().getSum());
-                System.out.println(orderList.get(i).getRoom().getSum());
                 orderList.remove(i);
-                System.out.println(orderList.get(i).getRoom().getSum());
             }
         }
     }
@@ -104,9 +107,9 @@ public class Hotel {
     }
 
     public void getTotalPricePerRoom(String nameRoom) {
-        for (int i = 0; i < orderList.size(); i++) {
-            if (orderList.get(i).getRoom().equals(nameRoom)) {
-                System.out.println(orderList.get(i).getRoom().getSum());
+        for (int i = 0; i < roomList.size(); i++) {
+            if (roomList.get(i).getName().equals(nameRoom)) {
+                System.out.println(roomList.get(i).getSum());
             }
         }
     }

@@ -1,7 +1,5 @@
 package Bai_1_QuanLyKhachSan.model;
 
-import java.util.ArrayList;
-
 public class Room {
     private String name;
     private String type;
@@ -42,8 +40,9 @@ public class Room {
         return sum;
     }
 
-    public void setSum(long sum) {
+    public long setSum(long sum) {
         this.sum = sum;
+        return sum;
     }
 
     public void setNumberOfHiresPerRoom(int numberOfHiresPerRoom) {
