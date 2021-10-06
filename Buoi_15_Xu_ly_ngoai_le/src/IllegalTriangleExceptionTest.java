@@ -1,4 +1,4 @@
-public class IllegalTriangleException {
+public class IllegalTriangleExceptionTest {
     public static void checkTriangle(int a, int b, int c) {
         if (a < b + c && b < a + c && c < a + b) {
             System.out.println("Đây là 1 tam giác");
