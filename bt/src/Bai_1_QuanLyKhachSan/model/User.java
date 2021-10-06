@@ -5,6 +5,7 @@ public class User {
     private String dOB;
     private String code;
     public int numberOfHiresPerPerson;
+    public long totalPricesOfUser;
 
     public User() {
     }
@@ -23,6 +24,15 @@ public class User {
         this.dOB = dOB;
         this.code = code;
         this.numberOfHiresPerPerson = 0;
+        this.totalPricesOfUser = 0;
+    }
+
+    public long getTotalPricesOfUser() {
+        return totalPricesOfUser;
+    }
+
+    public void setTotalPricesOfUser(long totalPricesOfUser) {
+        this.totalPricesOfUser = totalPricesOfUser;
     }
 
     public int getNumberOfHiresPerPerson() {

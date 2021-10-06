@@ -82,7 +82,8 @@ public class Hotel {
                 System.out.println("Thanh toán thành công");
                 System.out.println("Số ngày thuê: " + orderList.get(i).getNumberOfRentalDays());
                 System.out.println("Tiền phải trả: " + orderList.get(i).getTotalPrice());
-                orderList.get(i).getRoom().setSum(orderList.get(i).getTotalPrice() + orderList.get(i).getRoom().getSum());
+                orderList.get(i).getRoom().setSumPriceRoom(orderList.get(i).getTotalPrice() + orderList.get(i).getRoom().getSumPriceRoom());
+                orderList.get(i).getUser().setTotalPricesOfUser(orderList.get(i).getTotalPrice() + orderList.get(i).getUser().getTotalPricesOfUser());
                 orderList.remove(i);
             }
         }
@@ -109,7 +110,15 @@ public class Hotel {
     public void getTotalPricePerRoom(String nameRoom) {
         for (int i = 0; i < roomList.size(); i++) {
             if (roomList.get(i).getName().equals(nameRoom)) {
-                System.out.println(roomList.get(i).getSum());
+                System.out.println(roomList.get(i).getSumPriceRoom());
+            }
+        }
+    }
+
+    public void getTotalPricePerUser(String cmnd) {
+        for (int i = 0; i < userList.size(); i++) {
+            if (userList.get(i).getCode().equals(cmnd)) {
+                System.out.println(userList.get(i).getTotalPricesOfUser());
             }
         }
     }

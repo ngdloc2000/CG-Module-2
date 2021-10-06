@@ -6,7 +6,7 @@ public class Room {
     private int price;
     public boolean status;
     public int numberOfHiresPerRoom;
-    public long sum;
+    public long sumPriceRoom;
 
     public Room() {
     }
@@ -26,7 +26,7 @@ public class Room {
         this.price = price;
         this.status = true;
         this.numberOfHiresPerRoom = 0;
-        this.sum = 0;
+        this.sumPriceRoom = 0;
     }
 
     public Room(String name, String type, int price, boolean status) {
@@ -36,12 +36,12 @@ public class Room {
         this.status = status;
     }
 
-    public long getSum() {
-        return sum;
+    public long getSumPriceRoom() {
+        return sumPriceRoom;
     }
 
-    public long setSum(long sum) {
-        this.sum = sum;
+    public long setSumPriceRoom(long sum) {
+        this.sumPriceRoom = sum;
         return sum;
     }
 

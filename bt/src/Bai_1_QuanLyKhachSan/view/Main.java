@@ -58,6 +58,7 @@ public class Main {
             System.out.println("10. Thống kê số lần phòng được thuê");
             System.out.println("11. Thống kê số lần thuê của 1 người theo CMND");
             System.out.println("12. Tính doanh thu của 1 phòng");
+            System.out.println("13. Tính tổng tiền của 1 khách trên hệ thống");
             System.out.println("0. Thoát");
             System.out.print("Nhập lựa chọn: ");
             choice = scanner.nextInt();
@@ -143,7 +144,7 @@ public class Main {
                     hotel.getCountNumberOfRentalsPerRoom(name);
                     break;
                 case 11:
-                    System.out.println("Nhập CMNĐ của khách: ");
+                    System.out.print("Nhập CMNĐ của khách: ");
                     cmnd = scanner1.nextLine();
                     hotel.getCountNumOfHiresPerPerson(cmnd);
                     break;
@@ -151,6 +152,11 @@ public class Main {
                     System.out.print("Nhập tên phòng: ");
                     name = scanner1.nextLine();
                     hotel.getTotalPricePerRoom(name);
+                    break;
+                case 13:
+                    System.out.print("Nhập CMND của khách: ");
+                    cmnd = scanner1.nextLine();
+                    hotel.getTotalPricePerUser(cmnd);
                     break;
                 case 0:
                     System.exit(0);

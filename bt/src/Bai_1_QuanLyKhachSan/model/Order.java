@@ -1,7 +1,6 @@
 package Bai_1_QuanLyKhachSan.model;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 import static java.time.temporal.ChronoUnit.DAYS;
 
