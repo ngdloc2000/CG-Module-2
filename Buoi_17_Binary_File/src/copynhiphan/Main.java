@@ -4,12 +4,14 @@ import java.io.*;
 
 public class Main {
     public static void copyFile(File source, File target) throws IOException {
-        InputStream inputStream = new FileInputStream(source);
-        OutputStream outputStream = new FileOutputStream(target);
+        FileInputStream inputStream = new FileInputStream(source);
+        FileOutputStream outputStream = new FileOutputStream(target);
+        DataOutputStream dos = new DataOutputStream(outputStream);
 
         int line;
         while ((line = inputStream.read()) != -1) {
-            outputStream.write((char) line);
+            dos.writeInt(line);
+            System.out.println(line);
         }
         outputStream.close();
     }
