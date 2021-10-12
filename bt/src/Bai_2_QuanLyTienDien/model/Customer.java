@@ -1,6 +1,12 @@
 package Bai_2_QuanLyTienDien.model;
 
-public class Customer {
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.List;
+
+public class Customer implements Serializable {
     private String name;
     private String apartmentNumber;
     private String idElectricMeter;

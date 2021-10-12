@@ -1,6 +1,8 @@
 package Bai_2_QuanLyTienDien.model;
 
-public class Receipt {
+import java.io.Serializable;
+
+public class Receipt implements Serializable {
     private Customer customer;
     private String idReceipt;
     private int oldIndex;

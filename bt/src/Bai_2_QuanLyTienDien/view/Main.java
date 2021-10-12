@@ -12,18 +12,17 @@ public class Main {
         ArrayList<Customer> customerList = new ArrayList<>();
         ArrayList<Receipt> receiptList = new ArrayList<>();
 
-        Customer loc = new Customer("Lộc", "P606", "A32871");
-        Customer khanh = new Customer("Khánh", "000", "A33366");
-        customerList.add(loc);
-        customerList.add(khanh);
+//        Customer loc = new Customer("Lộc", "P606", "A32871");
+//        Customer khanh = new Customer("Khánh", "000", "A33366");
+//        customerList.add(loc);
+//        customerList.add(khanh);
 
-        Receipt r1 = new Receipt(loc, "Biên lai 1", 300, 400);
-        receiptList.add(r1);
+//        Receipt r1 = new Receipt(loc, "Biên lai 1", 300, 400);
+//        receiptList.add(r1);
 
         ManageReceipt manageReceipt = new ManageReceipt(customerList, receiptList);
-
+        String customerFilePath = "D:\\Codegym\\Module_2\\bt\\src\\Bai_2_QuanLyTienDien\\customer.txt";
         Scanner scannerInt = new Scanner(System.in);
-        Scanner scannerString = new Scanner(System.in);
         int choice = -1;
         while (choice != 0) {
             System.out.println("------------------------------");
@@ -41,13 +40,15 @@ public class Main {
                 case 1:
                     Customer customer = manageReceipt.inputCustomer();
                     customerList.add(customer);
+                    manageReceipt.writeCustomerListToFile(customerFilePath, customerList);
                     break;
                 case 2:
                     Receipt receipt = manageReceipt.inputReceipt();
                     receiptList.add(receipt);
                     break;
                 case 3:
-                    manageReceipt.showAllCustomer();
+//                    manageReceipt.showAllCustomer();
+                    manageReceipt.readCustomerFromFile(customerFilePath);
                     break;
                 case 4:
                     manageReceipt.showAllReceipt();
@@ -59,9 +60,9 @@ public class Main {
                     System.out.println("Số tiền điện mà số nhà " + apartmentNumber + " phải trả là: " + manageReceipt.calculateAmountPaidByApartmentNumber(apartmentNumber));
                     break;
                 case 0:
+                    manageReceipt.writeCustomerListToFile("D:\\Codegym\\Module_2\\bt\\src\\Bai_2_QuanLyTienDien\\customer.txt", customerList);
                     System.exit(0);
             }
         }
-
     }
 }

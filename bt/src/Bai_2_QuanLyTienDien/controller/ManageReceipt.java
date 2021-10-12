@@ -3,7 +3,9 @@ package Bai_2_QuanLyTienDien.controller;
 import Bai_2_QuanLyTienDien.model.Customer;
 import Bai_2_QuanLyTienDien.model.Receipt;
 
+import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ManageReceipt {
@@ -12,9 +14,10 @@ public class ManageReceipt {
 
     // Hiển thị tất cả Khách hàng
     public void showAllCustomer() {
-        for (int i = 0; i < customerList.size(); i++) {
-            System.out.println(i + 1 + ". " + customerList.get(i));
-        }
+//        for (int i = 0; i < customerList.size(); i++) {
+//            System.out.println(i + 1 + ". " + customerList.get(i));
+//        }
+        readCustomerFromFile("D:\\Codegym\\Module_2\\bt\\src\\Bai_2_QuanLyTienDien\\customer.txt");
     }
 
     // Hiển thị tất cả biên lai
@@ -83,6 +86,34 @@ public class ManageReceipt {
             }
         }
         return -1;
+    }
+
+    // Ghi File danh sách khách hàng
+    public void writeCustomerListToFile(String path, ArrayList<Customer> customerList) {
+        try {
+            FileOutputStream fos = new FileOutputStream(path);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(customerList);
+            oos.close();
+            fos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Đọc File danh sách khách hàng
+    public ArrayList<Customer> readCustomerFromFile(String path) {
+        ArrayList<Customer> customerList = new ArrayList<>();
+        try {
+            FileInputStream fis = new FileInputStream(path);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            customerList = (ArrayList<Customer>) ois.readObject();
+            fis.close();
+            ois.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return customerList;
     }
 
     public ManageReceipt() {
