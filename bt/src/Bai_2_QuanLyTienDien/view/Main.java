@@ -47,8 +47,7 @@ public class Main {
                     receiptList.add(receipt);
                     break;
                 case 3:
-//                    manageReceipt.showAllCustomer();
-                    manageReceipt.readCustomerFromFile(customerFilePath);
+                    manageReceipt.showAllCustomer();
                     break;
                 case 4:
                     manageReceipt.showAllReceipt();

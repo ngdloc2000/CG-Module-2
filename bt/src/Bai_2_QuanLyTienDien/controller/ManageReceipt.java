@@ -14,10 +14,11 @@ public class ManageReceipt {
 
     // Hiển thị tất cả Khách hàng
     public void showAllCustomer() {
-//        for (int i = 0; i < customerList.size(); i++) {
-//            System.out.println(i + 1 + ". " + customerList.get(i));
-//        }
-        readCustomerFromFile("D:\\Codegym\\Module_2\\bt\\src\\Bai_2_QuanLyTienDien\\customer.txt");
+        ArrayList<Customer> customerList = readCustomerFromFile("D:\\Codegym\\Module_2\\bt\\src\\Bai_2_QuanLyTienDien\\customer.txt");
+        for (Customer c : customerList
+        ) {
+            System.out.println(c);
+        }
     }
 
     // Hiển thị tất cả biên lai
