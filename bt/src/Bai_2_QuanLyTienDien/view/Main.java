@@ -11,15 +11,7 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<Customer> customerList = new ArrayList<>();
         ArrayList<Receipt> receiptList = new ArrayList<>();
-
-//        Customer loc = new Customer("Lộc", "P606", "A32871");
-//        Customer khanh = new Customer("Khánh", "000", "A33366");
-//        customerList.add(loc);
-//        customerList.add(khanh);
-
-//        Receipt r1 = new Receipt(loc, "Biên lai 1", 300, 400);
-//        receiptList.add(r1);
-
+        
         ManageReceipt manageReceipt = new ManageReceipt(customerList, receiptList);
         String customerFilePath = "D:\\Codegym\\Module_2\\bt\\src\\Bai_2_QuanLyTienDien\\customer.txt";
         Scanner scannerInt = new Scanner(System.in);

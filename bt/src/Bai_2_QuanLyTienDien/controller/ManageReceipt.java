@@ -105,6 +105,17 @@ public class ManageReceipt {
     // Đọc File danh sách khách hàng
     public ArrayList<Customer> readCustomerFromFile(String path) {
         ArrayList<Customer> customerList = new ArrayList<>();
+        File file = new File(path);
+        try {
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (file.length() == 0) {
+            return customerList;
+        }
         try {
             FileInputStream fis = new FileInputStream(path);
             ObjectInputStream ois = new ObjectInputStream(fis);

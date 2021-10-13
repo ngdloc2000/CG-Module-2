@@ -1,8 +1,6 @@
 package taothreaddongian;
 
-import taoluongbangrunnable.RunnableDemo;
-
-public class Main {
+public class Main extends Thread {
     public static void main(String[] args) {
         NumberGenerator ng1 = new NumberGenerator("Thread-1");
         ng1.start();
